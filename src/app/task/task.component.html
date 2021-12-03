@@ -1,0 +1,17 @@
+<div class="card">
+    <div class="card-header align-left">
+        <h4>
+            {{task.title}}
+
+            <button type="button" class="btn btn-sm pull-right" (click)="edit()">
+                <i class="bi bi-pen"></i>
+            </button>
+            <button type="button" class="btn btn-sm pull-right" (click)="delete()">
+                <i class="bi bi-trash"></i>
+            </button>
+        </h4>
+    </div>
+    <div class="card-body align-left">
+        <p>{{task.description}}</p>
+    </div>
+</div>

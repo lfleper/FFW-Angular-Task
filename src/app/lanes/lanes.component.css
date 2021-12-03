@@ -1,0 +1,26 @@
+.pull-right {
+    float: right;
+    padding: 1px;
+}
+
+.task {
+    margin-top: 5px;
+}
+
+.drop {
+    position: relative;
+    height: 100%;
+}
+
+.drag {
+    opacity: 0.5;
+}
+
+.item {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.align-left {
+    text-align: left;
+}
