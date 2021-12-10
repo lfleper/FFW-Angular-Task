@@ -14,7 +14,7 @@ import { cloneDeep } from 'lodash';
 export class LanesComponent implements OnInit {
 
   readonly LANES: Lane[] = LANES;
-  tasks: Task[] = TASKS;
+  tasks = TASKS;
 
   constructor(private modalService: NgbModal) { }
 
@@ -26,8 +26,7 @@ export class LanesComponent implements OnInit {
   }
 
   deleteTask(task: Task): void {
-    let index = this.tasks.findIndex(t => t.id === task.id);
-    this.tasks.splice(index, 1);
+    delete this.tasks[task.id];
   }
 
   addTask(): void {
@@ -37,15 +36,16 @@ export class LanesComponent implements OnInit {
       description: "",
       status: 0
     }
-    this.tasks.push(newTask);
+    this.tasks[newTask.id] = newTask;
   }
 
   editTask(task: Task): void {
     const modalRef = this.modalService.open(EditTaskComponent);
     modalRef.componentInstance.task = cloneDeep(task);
     modalRef.componentInstance.saveRequest.subscribe((result: Task) => {
+      console.log("Task: %o", result);
       //task = result;
-      task = { ...result};
+      this.tasks[result.id] = result;
     });
   }
 

@@ -31,7 +31,7 @@ export class EditTaskComponent implements OnInit {
 
   onSubmit(): void {
     console.log("submit");
-    //this.saveRequest.emit(this.task);
+    this.saveRequest.emit(this.task);
     this.activeModal.close(this.task);
   }
 

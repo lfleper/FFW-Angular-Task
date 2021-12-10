@@ -40,26 +40,26 @@ export type Task = {
   status: number
 }
 
-export var TASKS: Task[] = [
-  {
+export var TASKS: Record<number, Task> = {
+  1: {
   id: 1,
   title: "Learn JavaScript",
   description: "read a book on Javascript",
   status: 0,
   },
-  {
+  2: {
   id: 2,
   title: "Learn Vue",
   description: "read a book on Vue",
   status: 1,
   },
-  {
+  3: {
   id: 3,
   title: "Build something awesome",
   description: "Get an idea",
   status: 0,
   },
-];
+};
 
 @Component({
   selector: 'app-root',
